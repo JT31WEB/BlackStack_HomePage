@@ -1,0 +1,107 @@
+/* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}*/
+
+body {
+	background: #141414;
+	margin: 0;
+	font-family: sans-serif;
+}
+
+header {
+	background: #0d0d0d;
+	padding: 0.2em;
+	text-align: center;
+	color: white;
+}
+
+form {
+	margin: 0 2%;
+	color: #eee;
+}
+
+form p {
+	font-size: 115%;
+	letter-spacing: 0.1em;
+}
+
+/*radio box styles*/
+label[for="male"], label[for="female"] {
+	margin-bottom: 0.1em;
+	display: inline-block;
+}
+
+input:checked + label[for="male"], input:checked + label[for="female"] {
+	color: yellow;
+}
+
+/*checkbox styles*/
+label[for="web"],
+label[for="photoshop"],
+label[for="madonna"] {
+	margin-bottom: 0.1em;
+	display: inline-block;
+
+}
+
+input:checked + label[for="web"],
+input:checked + label[for="photoshop"],
+input:checked + label[for="madonna"] {
+	color: yellow;
+}
+
+/*text input & fields styles*/
+fieldset {
+	padding: 1%;
+	border: 1% solid #222;
+	width: 20%;
+}
+
+legend {
+	font-size: 150%;
+	letter-spacing: 0.1em;
+}
+
+input[type="email"],
+input[type="telephone"] {
+	display: block;
+	margin: 5% auto;
+	padding: 3%;
+	font-size: 120%;
+	border-radius: 4%;
+}
+/*select box styles*/
+select {
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	-o-appearance: none;
+	-ms-appearance: none;
+	appearance: none;
+
+	display: block;
+	margin: 1% 0;
+	padding: 1%;
+	background-color: black;
+	color: white;
+	font-size: 120%;
+	border-radius: 4%;
+	border: 0.2em solid white;
+}
+
+input[type="submit"] {
+	background: yellow;
+	color: black;
+	font-size: 120%;
+	border-radius: 4%;
+	border: 0.2em solid white;
+	padding: 0.5%;
+	letter-spacing: 0.1em;
+	width: 20%;
+}
+/*Validation */
+input[type="email"]:valid,
+input[type="telephone"]:valid {
+	border: 0.2em solid yellow;
+}

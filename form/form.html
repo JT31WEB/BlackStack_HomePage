@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>form</title>
+	<meta charset="utf-8"/>
+	<meta name="viewport" content="class=device-width, initial-scale=1"/>
+	<link rel="stylesheet" type="text/css" href="style.css"/>
+</head>
+<body id="body">
+	<header>
+		<h1>Form 1</h1>
+	</header>
+
+	<form>
+		<p>you are a ...</p>
+		<input type="radio" id="male" name="gender">
+		<label for="male">Male</label><br>
+		<input type="radio" id="female" name="gender">
+		<label for="female">Female</label><br>
+
+		<p>Who is interested in</p>
+		<input type="checkbox" id="web">
+		<label for="web">Web development</label>
+		<input type="checkbox" id="photoshop">
+		<label for="photoshop">photoshop</label>
+		<input type="checkbox" id="madonna">
+		<label for="madonna">Madonna</label>
+
+		<!--contact field-->
+		<fieldset>
+			<legend>Contact Info</legend>
+			<input type="email" placeholder="Email" required>
+			<span class="tick"></span>
+			<input type="telephone" placeholder="Phone Number" minlength="10" required>
+			<span class="tick"></span>
+		</fieldset>
+
+		<p>how would you like to be contacted</p>
+		<select>
+			<option>by Email</option>
+			<option>by Phone</option>
+		</select>
+		<input type="submit" value="Submit">
+	</form>
+<body>
+</html>
