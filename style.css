@@ -18,6 +18,7 @@ h1{
 	text-align: center;
 	padding: 0;
 	border: 5px solid white;
+	margin: 2% 2% 0 2%;
 	clear: both;
 }
 
@@ -39,8 +40,8 @@ h3{
 
 p {
 	font-size: 150%;
-	line-height: 150%
-	font-weight: 1000;
+	line-height: 120%;
+	font-weight: 100;
 }
 
 header{
@@ -82,7 +83,7 @@ i:hover {
 
 .main {
 	width: 60%;
-	padding: 3%;
+	padding: 1%;
 	text-align: center;
 }
 
@@ -91,36 +92,15 @@ i:hover {
 }
 
 .block i {
-	margin-top: 30%;
+	margin-top: 20%;
 }
 
 footer {
-	margin-top: -100px;
+	margin-top: 0;
 	width: 100%;
 	clear: both;
 }
 
-.footer-list {
-	width: 20%;
-	float: left;
-	text-align: center;
-	display: inline-block;
-}
-
-#profile {
-	width: 30%;
-	margin-top: 7%;
-	border: 3px solid white;
-	border-radius: 50%;
-}
-
-#profile:hover{
-	border: 9px solid yellow;
-	width: 45%;
-	transition-duration: 1s;
-	margin-top: 20px;
-	margin-bottom: -10px;
-}
 
 #title {
 	clear: both;
@@ -129,4 +109,15 @@ footer {
 #one-fourth {
 	width: 25%;
 	display: inline-block;
+}
+#list {
+	display: inline-block;
+	float: right;
+	margin-top: 7%;
+}
+#pic1 {
+	display: inline-block;
+	float: left;
+	width: 50%;
+	border: 3px solid white;
 }
