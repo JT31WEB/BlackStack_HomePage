@@ -18,7 +18,7 @@ h1{
 	text-align: center;
 	padding: 0;
 	border: 5px solid white;
-	margin: 2% 0 auto;
+	margin: 1% 1% auto;
 	clear: both;
 }
 
@@ -56,7 +56,40 @@ p {
 header{
 	width: 90%;
 	display: inline-block;
-	margin: 2% 2% 0 2%;
+	margin: 1% 1% 0 1%;
+}
+
+header:after {
+	content: "";
+	display: block;
+	clear: both;
+}
+
+.banner {
+	width: 100%;
+	position: fixed;
+	top: 0;
+	left: 0;
+	background-color: black;
+	margin-bottom: 1%;
+	z-index: 1;
+}
+
+
+
+input#menu {
+	display: none;
+}
+
+input:checked ~ #navigation {
+	max-height: 100%;
+	background-color: grey;
+	padding-top: 1%;
+}
+
+#navigation {
+	max-height: 0;
+	overflow: hidden;
 }
 
 a, a:link, a:visited {
@@ -101,16 +134,22 @@ i:hover {
 	text-align: center;
 }
 
+#content {
+	margin-top: 5%;
+}
+
+#content:after {
+	content: "";
+	display: block;
+	clear: both;
+}
+
 footer {
-	margin-top: 0;
-	width: 100%;
-	clear: both;
+	margin: 10% 4% 1% 4%;
+	width: 90%;
+	clear: both;	
 }
 
-
-#title {
-	clear: both;
-}
 
 #one-fourth {
 	width: 25%;
@@ -133,7 +172,7 @@ footer {
 /*MEDIA QUERIES*/
 
 /*TABLETS*/
-@media screen and (max-width: 790px) {
+@media screen and (max-width: 800px) {
 i{
 	font-size: 500%;
 }
@@ -145,6 +184,10 @@ i{
 	font-weight: 400; 
 	text-align: center;
 	margin: 5% 0 1% 0;
+}
+
+#content {
+	margin-top: 8%;
 }
 
 .main {
@@ -184,14 +227,18 @@ i{
 	display: inline-block;
 	margin: 2% 0 auto;
 	float: none;
-	line-height: 100%;
+	line-height: 120%;
 	text-align: center;
+}
+
+input:checked ~ #navigation {
+	padding-top: 5%;
 }
 
 /*END OF TABLETS*/
 
 /*MOBILEPHONES*/
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 500px) {
 
 i{
 	font-size: 250%;
@@ -221,6 +268,7 @@ i{
 
 #content {
 	position: relative;
+	margin-top: 20%;
 }
 
 .right {
@@ -251,6 +299,12 @@ i{
 	text-align: center;
 }
 
+}
+
+@media screen and (max-width: 400px){
+#content {
+	margin-top: 40%;
+}
 
 }
 /*END OF MOBILEPHONE*/
