@@ -75,8 +75,6 @@ header:after {
 	z-index: 1;
 }
 
-
-
 input#menu {
 	display: none;
 }
@@ -235,6 +233,15 @@ input:checked ~ #navigation {
 	padding-top: 5%;
 }
 
+h1 {
+	font-size: 400%;
+}
+
+h1:hover {
+	transition: none;
+	color: white;
+	font-size: 400%;
+}
 /*END OF TABLETS*/
 
 /*MOBILEPHONES*/
@@ -268,7 +275,7 @@ i{
 
 #content {
 	position: relative;
-	margin-top: 20%;
+	margin-top: 12%;
 }
 
 .right {
@@ -299,12 +306,21 @@ i{
 	text-align: center;
 }
 
+h1:hover {
+	transition: none;
+	color: white;
+	font-size: 200%;
+}
+
 }
 
 @media screen and (max-width: 400px){
 #content {
-	margin-top: 40%;
+	margin-top: 15%;
 }
 
+h1{
+	font-size: 250%;
+}
 }
 /*END OF MOBILEPHONE*/
