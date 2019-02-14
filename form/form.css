@@ -65,7 +65,7 @@ legend {
 }
 
 input[type="email"],
-input[type="telephone"] {
+input[type="text"] {
 	display: block;
 	margin: 5% auto;
 	padding: 3%;
@@ -102,6 +102,6 @@ input[type="submit"] {
 }
 /*Validation */
 input[type="email"]:valid,
-input[type="telephone"]:valid {
+input[type="text"]:valid {
 	border: 0.2em solid yellow;
 }

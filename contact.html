@@ -21,7 +21,17 @@
 			
 			<input type="checkbox" id="menu"/>
 			<label for="menu">
-				<h1>BLACK STACK</h1>
+				
+				<h1>
+					<section class="home">
+						<td><a href="index.html"><i class="fas fa-home"></i></a></td>
+					</section>
+					BLACK STACK
+					<section class="message">
+						<td><a href="contact.html"><i class="fas fa-envelope"></i></a></td>
+					</section>
+
+				</h1>
 			</label>
 
 			<!-- TOP ICONS-->
@@ -80,7 +90,67 @@
 	<!--MAIN content block-->
 	<section class="main block">
 
-		<h2>HTML</h2>
+		<h2>CONTACT THAPELO</h2>
+
+		<form action="mail.php" method="post">
+
+			<!--RADIO BUTTONS-->
+			<div class="visitor">
+				<p class="heading">YOU ARE A?</p><br>
+				<input type="radio" id="dev" name="contact">
+				<label for="dev">DEVELOPER</label>
+				<input type="radio" id="client" name="contact">
+				<label for="client">CLIENT</label>
+				<input type="radio" id="friend" name="contact">
+				<label for="friend">FRIEND</label>
+			</div>
+			<!--END OF RADIO BUTTONS-->
+
+
+			<!--CHECKBOX SECTION-->
+			<div class="interest">
+				<p>WHO IS INTERESTED IN?</p>
+				<input type="checkbox" id="html">
+				<label for="html">HTML</label>
+				<input type="checkbox" id="css">
+				<label for="css">CSS</label>
+				<input type="checkbox" id="javascript">
+				<label for="javascript">JAVASCRIPT</label>
+				<input type="checkbox" id="php">
+				<label for="php">PHP</label>
+				<input type="checkbox" id="sql">
+				<label for="sql">MySQL</label>
+				<input type="checkbox" id="seo">
+				<label for="seo">SEO</label>
+				<input type="checkbox" id="ui">
+				<label for="ui">UI/UX</label>
+				<input type="checkbox" id="pwa">
+				<label for="pwa">PWA</label>
+			</div>
+			<!--END OF CHECKBOX-->
+
+			<!--CONTACT FIELDSET-->
+			<fieldset>
+				<legend>Contact Info</legend>
+				<input name="contactName" type="text" placeholder="Name" minlength="2" maxlength="30" pattern="^[A-Za-z0-9._%+-]{2,30}$" required>
+				<input name="contactEmail" type="email" pattern="[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{1,63}$" placeholder="Email" required><span></span>
+				<textarea name="contactComment" type="text" class="comment" placeholder="Tell me anything..." maxlength="400" pattern="^[A-Za-z0-9._%+-]{2,400}$"></textarea>
+
+				<!--SELECT BUTTON-->
+				<p>how would you like to be contacted?</p>
+				<select>
+					<option name="reply">by Email</option>
+					<option name="reply">by Phone</option>
+				</select>
+				<!-- END OF SELECT BUTTONS-->
+
+			</fieldset>
+			<!--END OF FIELDSET-->
+
+			<!--SUBMIT BUTTONS-->
+			<input type="submit" value="Submit">
+
+		</form>
 		
 	</section>
 	<!--END OF main content block-->

@@ -44,7 +44,7 @@ h2{
 	font-weight: 400; 
 	text-align: center;
 	margin: 5% 0 1% 0;
-	text-underline-position: bottom;
+	text-decoration: underline;
 }
 
 p {
@@ -88,6 +88,29 @@ input:checked ~ #navigation {
 #navigation {
 	max-height: 0;
 	overflow: hidden;
+}
+
+h1 section {
+	display: inline-block;
+}
+
+
+h1 i {
+	font-size: 100%;
+	position: relative;
+	
+}
+
+.home {
+	float: left;
+	margin: 0 5%;
+	top: 200px;
+}
+
+.message {
+	float: right;
+	margin: 0 5%;
+	top: 300px;
 }
 
 a, a:link, a:visited {
@@ -167,6 +190,155 @@ footer {
 	border: 3px solid white;
 }
 
+/*HTML5 FORM*/
+form {
+	margin: 0;
+	color: #eee;
+}
+
+form p {
+	font-size: 150%;
+	letter-spacing: 0.1em;
+	margin-top: 3%;
+	margin-bottom: 2%;
+	text-decoration: underline;
+}
+
+form label {
+	font-size: 120%;
+}
+
+/*radio box styles*/
+label[for="dev"],
+label[for="client"],
+label[for="friend"] {
+	margin-bottom: 0.1em;
+	display: inline-block;
+	width: 20%;
+}
+
+input:checked + label[for="dev"],
+input:checked + label[for="client"],
+input:checked + label[for="friend"] {
+	color: yellow;
+}
+
+/*checkbox styles*/
+input#html,
+input#css,
+input#javascript,
+input#php,
+input#sql,
+input#seo,
+input#ui,
+input#pwa {
+	
+}
+
+label[for="html"],
+label[for="css"],
+label[for="javascript"],
+label[for="php"],
+label[for="sql"],
+label[for="seo"],
+label[for="ui"],
+label[for="pwa"] {
+	margin: 0 auto;
+	display: inline-block;
+	width: inherit;
+	padding: 1%; 
+}
+
+input:checked + label[for="html"],
+input:checked + label[for="css"],
+input:checked + label[for="javascript"],
+input:checked + label[for="php"],
+input:checked + label[for="sql"],
+input:checked + label[for="seo"],
+input:checked + label[for="ui"],
+input:checked + label[for="pwa"] {
+	color: yellow;
+}
+
+form div {
+	border: 3px solid white;
+	margin:3% 0;
+	padding: 1%;
+}
+/*text input & fields styles*/
+fieldset {
+	padding: 0;
+	border: 3px solid white;
+	width: 100%;
+	margin-top: 5%;
+}
+
+fieldset p {
+	margin-top: 5%;
+}
+
+legend {
+	font-size: 150%;
+	letter-spacing: 0.1em;
+	padding: 0 5%;
+}
+
+input[type="email"],
+input[type="text"] {
+	display: block;
+	margin: 5% auto;
+	padding: 3%;
+	font-size: 120%;
+	border-radius: 4%;
+}
+
+
+.comment {
+	display: block;
+	margin: 0 auto;
+	padding: 3%;
+	font-size: 120%;
+	border-radius: 4%;
+	height: 200px;
+	width: 38%;
+	resize: none;
+	margin-bottom: 2%;
+}
+
+/*select box styles*/
+select {
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	-o-appearance: none;
+	-ms-appearance: none;
+	appearance: none;
+
+	display: block;
+	margin: 1% auto;
+	padding: 1%;
+	background-color: black;
+	color: white;
+	font-size: 120%;
+	border-radius: 4%;
+	border: 0.2em solid white;
+}
+
+input[type="submit"] {
+	background: yellow;
+	color: black;
+	font-size: 120%;
+	border-radius: 4%;
+	border: 0.2em solid white;
+	padding: 0.5%;
+	letter-spacing: 0.1em;
+	width: 40%;
+	margin-top: 5%;
+}
+/*Validation */
+input[type="email"]:valid,
+input[type="text"]:valid {
+	border: 0.2em solid yellow;
+}
 /*MEDIA QUERIES*/
 
 /*TABLETS*/
@@ -245,6 +417,35 @@ h1:hover {
 h1:active {
 	color: yellow;
 }
+
+.home {
+	margin: 0 1%;
+}
+
+.message {
+	margin: 0 1%;
+}
+
+form p{
+	text-align: center !important; 
+}
+
+input[type="email"],
+input[type="text"] {
+	width: 55%;
+}
+
+.comment {
+	width: 55%;
+}
+
+label[for="dev"],
+label[for="client"],
+label[for="friend"] {
+	margin-bottom: 0.1em;
+	display: inline-block;
+	width: initial;
+}
 /*END OF TABLETS*/
 
 /*MOBILEPHONES*/
@@ -315,8 +516,49 @@ h1:hover {
 	font-size: 200%;
 }
 
+h1 i {
+	font-size: 100%;
 }
 
+h1 i {
+	display: inline-block;
+	position: absolute;
+	right: 0;
+	margin: 0 auto;
+	background: yellow;
+	color: black;
+	width: 12%;
+}
+
+
+.home i {
+	top: 300px;
+}
+
+.message i {
+	top: 350px;
+	
+}
+
+label[for="dev"],
+label[for="client"],
+label[for="friend"] {
+	margin-bottom: 0.1em;
+	display: inline-block;
+	width: initial;
+}
+
+input[type="email"],
+input[type="text"] {
+	width: 75%;
+}
+
+.comment {
+	width: 75%;
+}
+}
+
+/* phones wider than 400 px*/ 
 @media screen and (max-width: 400px){
 #content {
 	margin-top: 15%;
@@ -326,4 +568,28 @@ h1{
 	font-size: 250%;
 }
 }
+
+@media screen and (min-height: 600px){
+	.home i {
+	top: 500px;
+}
+
+.message i {
+	top: 550px;	
+}
+}
 /*END OF MOBILEPHONE*/
+@media screen and (min-height: 1000px){
+	h1 i {
+	position: relative;
+	}
+
+.home i {
+top: 0;
+}
+
+.message i {
+	top: 0;	
+}
+
+}
