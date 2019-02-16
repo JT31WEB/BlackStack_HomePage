@@ -336,8 +336,15 @@ input[type="submit"] {
 }
 /*Validation */
 input[type="email"]:valid,
-input[type="text"]:valid {
+input[type="text"]:valid,
+textarea:valid {
 	border: 0.2em solid yellow;
+	background: white;
+}
+
+.error {
+	font-size: 150%;
+	color: red;
 }
 /*MEDIA QUERIES*/
 

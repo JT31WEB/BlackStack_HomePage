@@ -92,16 +92,16 @@
 
 		<h2>CONTACT THAPELO</h2>
 
-		<form action="mail.php" method="post">
+		<form action="display.php" method="post">
 
 			<!--RADIO BUTTONS-->
 			<div class="visitor">
 				<p class="heading">YOU ARE A?</p><br>
-				<input type="radio" id="dev" name="contact">
-				<label for="dev">DEVELOPER</label>
-				<input type="radio" id="client" name="contact">
+				<input type="radio" id="dev" name="contact" value="Developer">
+				<label for="dev" >DEVELOPER</label>
+				<input type="radio" id="client" value="Client" name="contact">
 				<label for="client">CLIENT</label>
-				<input type="radio" id="friend" name="contact">
+				<input type="radio" id="friend" value="Friend" name="contact">
 				<label for="friend">FRIEND</label>
 			</div>
 			<!--END OF RADIO BUTTONS-->
@@ -110,21 +110,21 @@
 			<!--CHECKBOX SECTION-->
 			<div class="interest">
 				<p>WHO IS INTERESTED IN?</p>
-				<input type="checkbox" id="html">
+				<input type="checkbox" id="html" value="HTML" name="interest[]">
 				<label for="html">HTML</label>
-				<input type="checkbox" id="css">
+				<input type="checkbox" id="css" value="CSS" name="interest[]">
 				<label for="css">CSS</label>
-				<input type="checkbox" id="javascript">
+				<input type="checkbox" id="javascript" value="JAVASCRIPT" name="interest[]">
 				<label for="javascript">JAVASCRIPT</label>
-				<input type="checkbox" id="php">
+				<input type="checkbox" id="php" value="PHP" name="interest[]">
 				<label for="php">PHP</label>
-				<input type="checkbox" id="sql">
+				<input type="checkbox" id="sql" value="MySQL" name="interest[]">
 				<label for="sql">MySQL</label>
-				<input type="checkbox" id="seo">
+				<input type="checkbox" id="seo" value="SEO" name="interest[]">
 				<label for="seo">SEO</label>
-				<input type="checkbox" id="ui">
+				<input type="checkbox" id="ui" value="UI&UX" name="interest[]">
 				<label for="ui">UI/UX</label>
-				<input type="checkbox" id="pwa">
+				<input type="checkbox" id="pwa" value="PWA" name="interest[]">
 				<label for="pwa">PWA</label>
 			</div>
 			<!--END OF CHECKBOX-->
@@ -132,15 +132,15 @@
 			<!--CONTACT FIELDSET-->
 			<fieldset>
 				<legend>Contact Info</legend>
-				<input name="contactName" type="text" placeholder="Name" minlength="2" maxlength="30" pattern="^[A-Za-z0-9._%+-]{2,30}$" required>
-				<input name="contactEmail" type="email" pattern="[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{1,63}$" placeholder="Email" required><span></span>
-				<textarea name="contactComment" type="text" class="comment" placeholder="Tell me anything..." maxlength="400" pattern="^[A-Za-z0-9._%+-]{2,400}$"></textarea>
+				<input name="contactName" type="text" placeholder="Name" minlength="2" maxlength="30" pattern="%^[A-Za-z0-9\_\-\']{2,30}$%"  required>
+				<input name="contactEmail" type="email" pattern="[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{1,63}$" placeholder="Email" required>
+				<textarea name="contactComment" type="text" class="comment" placeholder="Enter Message: DO NOT USE SPECIAL CHARACTERS like *, #, <, or % etc!!" maxlength="400" minlength="20" pattern="^[A-Za-z0-9.,_+-]{2,400}$" required></textarea>
 
 				<!--SELECT BUTTON-->
 				<p>how would you like to be contacted?</p>
-				<select>
-					<option name="reply">by Email</option>
-					<option name="reply">by Phone</option>
+				<select name="reply">
+					<option value="Email">by Email</option>
+					<option value="Phone">by Phone</option>
 				</select>
 				<!-- END OF SELECT BUTTONS-->
 
