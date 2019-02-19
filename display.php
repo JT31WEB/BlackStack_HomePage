@@ -13,7 +13,7 @@
     <link href="css/all.min.css" rel="stylesheet"/>
 </head>
 
-<body>
+<body onscroll="document.getElementById('menu').checked=false;">
 
     <header>
 
@@ -88,108 +88,109 @@
 
 
     <!--MAIN content block-->
-    <section class="main block">
+    <section class="main block" onclick="document.getElementById('menu').checked=false;">
         <?php
-    
-    
-  
-   ## foreach ($_POST['interest[]'] as $interest[]) {
-     ##    echo $interest . ", ";
-      #   }
+        $output1 = $output2 = $output3 = $output4 = $output5 = " ";
+        $messageErr1 = $messageErr2 = $messageErr3 = false;
 
-    ##############################
-    #ESCAPE DATA(SANITIZE)
-     function escapeData($data){
-        if(function_exists('mysql_real_escape_string')){
-            $data = mysql_real_escape_string($data);
-            $data = strip_tags($data);
-            $data = stripslashes($data);
-        } else {
-            $data = strip_tags($data);
-            $data = stripslashes($data);
-            $data = htmlspecialchars($data);
-            $data = filter_var($data, FILTER_SANITIZE_STRING);
+        if ($_SERVER["REQUEST_METHOD"] == "POST"){ 
+            #########################
+            #  VALIDATE
+
+            
+            #####  NAME CHECK
+            #####################
+            if (preg_match('%^[A-Za-z\.\'\-\_]{2,30}$%', stripslashes(trim($_POST['contactName'])))) {
+                 $output1 = escapeData($_POST['contactName']);
+             } else {
+                $output1 = "<p class='error'>Please enter a valid Name!</p>";
+                $messageErr1 = true;
+             }
+             #####################
+
+
+            #####   EMAIL CHECK
+            ###########################
+            if (preg_match('%^[A-Za-z0-9._-]{2,20}+@[A-Za-z0-9._-]+\.[A-Za-z]{2,10}$%', stripslashes(trim($_POST['contactEmail'])))) {
+                $output2 = escapeData($_POST['contactEmail']);
+             } else {
+                $output2 = "<p class='error'>Please enter a valid Email!</p>";
+                $messageErr2 = true;
+             }
+             ############################
+
+             ########## VISITOR CHECK      
+             #############################
+             if (preg_match("%Developer|Client|Friend%", stripslashes(trim($_POST['contact'])))) {
+                 $output3 = escapeData($_POST['contact']);
+             } else {
+                $output3 = "<p class='error'>SELECT CONTACT TYPE: DEVELOPER, CLIENT OR FRIEND</p>";
+             }
+             #############################
+
+            
+            ##### POST REPLY CHECK
+            #################################
+            if (preg_match("%Phone|Email%", stripslashes(trim($_POST['reply'])))) {
+                $output4 = escapeData($_POST['reply']);
+             } else {
+                $output4 = "<p class='error'>Please enter a valid Name</p>";
+             }
+             #####################
+
+
+             ######  MESSAGE CHECK
+             ###################################
+            if (preg_match('%^[A-Za-z0-9\s\.\,\'\"\@\-\_\?\!]{2,400}$%', stripslashes($_POST['contactComment']))) {
+                 $output5 = escapeData($_POST['contactComment']);
+             } else {
+                $output5 = "<p class='error'>YOUR MESSAGE IS NOT CORRECT!<br>
+                DO NOT USE SPECIAL CHARACTERS LIKE #, *, %,$,(,),< or> ETC</p>";
+                $messageErr3 = true;
+             }
+             #####################
+
+
+
+            #####   MESSAGE TABLE (FOR EMAIL)
+             #######################################
+            $message ='<h2>E-mail Example</h2>
+                <table >
+                <tr><td>Sender: '.$output1.'</td></tr>
+                <tr><td>Email: '.$output2.'</td></tr>
+               
+                <tr><td>Reply by: '.$output4.'</td></tr>
+                <tr><td>Visitor type: '.$output3.'</td></tr>
+                <tr><td>MESSAGE: </td></tr>
+                <tr><td>'.$output5.'</td></tr>
+                
+            </table>';
+            ###################
+
+            #####   PRINT TO SCREEN
+            ########################
+            if($messageErr1 | $messageErr2 | $messageErr3 == true){
+                echo $message;
+                echo "<p class='error'>YOUR MESSAGE WILL NOT BE SENT!</p>";
+            } else {
+                echo $message;
+                echo "<p class='success'>YOUR MESSAGE IS VALID AND CAN BE SENT!(BUT HASN'T!)</p>";
+            }
+            
+            ################
         }
-        return $data;
+
+         #####    ESCAPE DATA(SANITIZE)
+    ##############################
+     function escapeData($data){
+            $data = strip_tags($data);
+            $data = stripslashes($data);
+            $data = htmlentities($data);
+            $data = htmlspecialchars($data);
+            # with these functions i do EVERTHING I can to sanitize then hope for the best
+            return $data;
      }
      #################################
-
-
-    #########################
-    #  VALIDATE
-
-    
-    #####  NAME CHECK
-    #####################
-    if (preg_match('%^[A-Za-z\.\'\-\_]{2,30}$%', stripslashes(trim($_POST['contactName'])))) {
-         $firstname = escapeData($_POST['contactName']);
-     } else {
-        $firstname = "<p class='error'>Please enter a valid Name!</p>";
-     }
-     #####################
-
-
-    #####   EMAIL CHECK
-    ###########################
-    if (preg_match('%^[A-Za-z0-9._-]{2,20}+@[A-Za-z0-9._-]+\.[A-Za-z]{2,10}$%', stripslashes(trim($_POST['contactEmail'])))) {
-        $email  = escapeData($_POST['contactEmail']);
-     } else {
-        $email = "<p class='error'>Please enter a valid Email!</p>";
-     }
-     ############################
-
-     ########## VISITOR CHECK      
-     #############################
-     if (preg_match("%Developer|Client|Friend%", stripslashes(trim($_POST['contact'])))) {
-         $visitor = escapeData($_POST['contact']);
-     } else {
-        $visitor = "<p class='error'>SELECT CONTACT TYPE: DEV, CLIENT OR FRIEND</p>";
-     }
-     #############################
-
-    
-    ##### POST REPLY CHECK
-    #################################
-    if (preg_match("%Phone|Email%", stripslashes(trim($_POST['reply'])))) {
-        $reply = escapeData($_POST['reply']);
-     } else {
-        $reply = "<p class='error'>Please enter a valid Name</p>";
-     }
-     #####################
-
-
-     ######  MESSAGE CHECK
-     ###################################
-    if (preg_match('%^[A-Za-z\s\.\,\'\"\-\_\?\!]{2,400}$%', stripslashes($_POST['contactComment']))) {
-         $text = escapeData($_POST['contactComment']);
-     } else {
-        $text = "<p class='error'>YOUR TEXT IS NOT CORRECT!<br>
-                DO NOT USE SPECIAL CHARACTERS LIKE #, *, %,$,@,(,),< or> ETC</p>";
-     }
-     #####################
-
-
-
-    #####   MESSAGE TABLE (FOR EMAIL)
-     #######################################
-    $message ='<h2>E-mail Example</h2>
-        <table style="width:100%">
-        <tr><td>Sender: '.$firstname.'</td></tr>
-        <tr><td>Email: '.$email.'</td></tr>
-       
-        <tr><td>Reply by: '.$reply.'</td></tr>
-        <tr><td>Visitor type: '.$visitor.'</td></tr>
-        <tr><td>Message: '.$text.'</td></tr>
-        
-    </table>';
-    ###################
-
-
-    
-    #####   PRINT TO StdOut(lol)
-    ########################
-    echo $message . "<br>";
-    ################
 
 ?>
     </section>

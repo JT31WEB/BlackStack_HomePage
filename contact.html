@@ -12,7 +12,7 @@
 	<link href="css/all.min.css" rel="stylesheet"/>
 </head>
 
-<body>
+<body onscroll="document.getElementById('menu').checked=false;">
 
 	<header>
 
@@ -30,34 +30,33 @@
 					<section class="message">
 						<td><a href="contact.html"><i class="fas fa-envelope"></i></a></td>
 					</section>
-
-				</h1>
+			</h1>
 			</label>
 
 			<!-- TOP ICONS-->
 				<div id="navigation">
 				<section class="one-fifth">
-					<td><a href="#"><i class="fab fa-html5"></i></a></td>
+					<td><a href="html.html"><i class="fab fa-html5"></i></a></td>
 					<p class="icon_text">HTML</p>
 				</section>
 
 				<section class="one-fifth">
-					<td><a href="#"><i class="fab fa-css3"></i></a></td>
+					<td><a href="css.html"><i class="fab fa-css3"></i></a></td>
 					<p class="icon_text">CSS</p>
 				</section>
 
 				<section class="one-fifth">
-					<td><a href="#"><i class="fas fa-code"></i></a></td>
+					<td><a href="html.html"><i class="fas fa-code"></i></a></td>
 					<p class="icon_text">JAVASCRIPT</p>
 				</section>
 
 				<section class="one-fifth">
-					<td><a href="#"><i class="fas fa-search"></i></a></td>
+					<td><a href="css.html"><i class="fas fa-search"></i></a></td>
 					<p class="icon_text">SEO</p>
 				</section>
 
 				<section class="one-fifth">
-					<td><a href="#"><i class="fas fa-database"></i></a></td>
+					<td><a href="css.html"><i class="fas fa-database"></i></a></td>
 					<p class="icon_text">PHP/MySQL</p>
 				</section>
 			</div>
@@ -88,7 +87,7 @@
 
 
 	<!--MAIN content block-->
-	<section class="main block">
+	<section class="main block" onclick="document.getElementById('menu').checked=false;">
 
 		<h2>CONTACT THAPELO</h2>
 
@@ -132,9 +131,9 @@
 			<!--CONTACT FIELDSET-->
 			<fieldset>
 				<legend>Contact Info</legend>
-				<input name="contactName" type="text" placeholder="Name" minlength="2" maxlength="30" pattern="%^[A-Za-z0-9\_\-\']{2,30}$%"  required>
+				<input name="contactName" type="text" placeholder="Name" minlength="2" maxlength="30" pattern="[A-Za-z0-9-_']{2,30}"  required>
 				<input name="contactEmail" type="email" pattern="[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{1,63}$" placeholder="Email" required>
-				<textarea name="contactComment" type="text" class="comment" placeholder="Enter Message: DO NOT USE SPECIAL CHARACTERS like *, #, <, or % etc!!" maxlength="400" minlength="20" pattern="^[A-Za-z0-9.,_+-]{2,400}$" required></textarea>
+				<textarea name="contactComment" type="text" class="comment" placeholder="Enter Message: DO NOT USE SPECIAL CHARACTERS like *, #, <, or % etc!!" maxlength="400" minlength="20" pattern="[A-Za-z0-9.,_!@]{20,400}" required></textarea>
 
 				<!--SELECT BUTTON-->
 				<p>how would you like to be contacted?</p>

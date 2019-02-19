@@ -20,8 +20,8 @@
 		<!--BANNER-->
 		<section class="banner">
 			
-			<input type="checkbox" id="menu">
-			<label for="menu" >
+			<input type="checkbox" id="menu"/>
+			<label for="menu">
 				
 				<h1>
 					<section class="home">
@@ -88,44 +88,18 @@
 
 
 	<!--MAIN content block-->
-	<section class="main block" onclick="document.getElementById('menu').checked=false;">
+	<section class="main block"  onclick="document.getElementById('menu').checked=false;">
 
-		<h2>WHAT IS BLACK STACK?</h2>
+		<h2>LOST IN THE BLACK STACK?</h2>
+		
 		<p>
-			Black Stack is a display website for the learning and testing of web development concepts by Thapelo Sepale. Thapelo is an aspiring programmer with a keen interest in Php and MySql web development. Thapelo, who is also known by the name "JT31WEB" on the internet, is a junior web developer from Klerksdorp in South Africa.
+			THE PAGE YOU WERE LOOKING FOR IS NOT ON BLACKSTACK<br>
+			<br>
+			CLICK ON THE HOME ICON OR CLICK <a href="index.html">GO HOME!</a>
 		</p>
-		<br>
 
-		<p>
-			Thapelo Sepale(JT31WEB) as a self taught web developer learnt the basics of HTML5, CSS3, JAVASCRIPT, PHP & MYSQL from various E-books, YouTube videos and websites.
-			He is also familiar with other software development concepts such as user interface design, web services, basic web security and SDLC.
-			Thapelo is dedicated to learning the latest web technology and is now regularly updating his Github repository to both get more familiar with the Git version control system and to display and get input from better developers.
-		</p>
-		<br>
-
-		<p>
-			Currently, JT31WEB is working on the various aspects of being a FULL STACK DEVELOPER and hopes to one day teach these skills to less fortunate kids & adults who never had an opportunity to learn them.
-			He is also very passionate about education and self improvement and believes that the internet is by far the best tool to offer the most trusted and innovative educational content and tools.
-			He also plans to convert the current BlackStack website into a educational platform where people can access and discuss various web development topics and concepts.
-		</p>
-		<br>
-
-		<h2>DEVELOPER DESCRIPTION</h2>
-		<p>
-			Here is a quick self description of Thapelo Sepale(JT31WEB). These are just some of the qualities he believes he posses and uses daily to become better at what he does best, WEB DEVELOPMENT.
-		</p>
-		<br>
-		<img src="Skxo3vdq_400x400.jpg" id="pic1" alt="Picture of THAPELO SEPALE">
-		<p id="list">
-			Inquisitive.<br>
-			Pragmatic.<br>
-			Innovative.<br>
-			Effective Communicator.<br>
-			Resourceful.<br>
-			Goal Orientated.<br>
-			Team Player.<br>
-			Life-Long Learner.<br>
-			Dedicated.<br>
+		<p class="warning">
+			404, PAGE NOT FOUND!
 		</p>
 	</section>
 	<!--END OF main content block-->

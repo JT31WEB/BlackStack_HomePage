@@ -74,7 +74,7 @@ header:after {
 	margin-bottom: 1%;
 	z-index: 1;
 }
-
+/*MENU IS ATTACHED TO INPUT CHECKBOX*/
 input#menu {
 	display: none;
 }
@@ -338,14 +338,33 @@ input[type="submit"] {
 input[type="email"]:valid,
 input[type="text"]:valid,
 textarea:valid {
-	border: 0.2em solid yellow;
-	background: white;
+	border: 0.3EM solid yellow;
+}/*end validation*/
+
+
+table {
+	font-size: 140%;
+	text-align: left;
+}
+
+.success {
+	margin-top: 8%;
+	color: yellow;
+	font-size: 120% !important;
 }
 
 .error {
-	font-size: 150%;
+	margin-top: 8%;
 	color: red;
+	font-size: 120% !important;
 }
+
+.warning {
+	margin-top: 8%;
+	color: red;
+	font-size: 320% !important;
+}
+
 /*MEDIA QUERIES*/
 
 /*TABLETS*/
@@ -586,17 +605,17 @@ h1{
 }
 }
 /*END OF MOBILEPHONE*/
-@media screen and (min-height: 1000px){
-	h1 i {
-	position: relative;
-	}
+@media screen and (min-height: 900px){
+h1 i {
+position: relative;
+}
 
 .home i {
-top: 0;
+top: 0px;
 }
 
 .message i {
-	top: 0;	
+	top: 0px;	
 }
 
 }
